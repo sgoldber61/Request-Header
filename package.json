@@ -1,0 +1,27 @@
+{
+  "name": "request-header",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sgoldber61/Request-Header.git"
+  },
+  "author": "sgoldber61",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sgoldber61/Request-Header/issues"
+  },
+  "homepage": "https://github.com/sgoldber61/Request-Header#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "ipware": "^1.0.0",
+    "nodemon": "^1.13.0",
+    "path": "^0.12.7",
+    "request-ip": "^2.0.2"
+  }
+}
