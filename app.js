@@ -17,9 +17,10 @@ app.get('/', function(req, res) {
 // example: {ipaddress: "72.198.91.159", language: "en-US", software: "Macintosh; Intel Mac OS X 10_11_1"}
 app.get('/whoami', function(req, res) {
   var ipaddress = req.headers['x-forwarded-for'].split(",")[0];
+  var language = req.headers["accept-language"];
   
-  res.send({ipaddress: ipaddress});
   
+  res.send({ipaddress: ipaddress, language: language, software: null});
 });
 
 // listen to port
