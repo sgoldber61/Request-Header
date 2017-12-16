@@ -19,8 +19,11 @@ app.get('/whoami', function(req, res) {
   var ipaddress = req.headers['x-forwarded-for'].split(",")[0];
   var language = req.headers["accept-language"].split(",")[0];
   
+  var softwareData = req.headers['user-agent'];
+  var regex = /\(([^)]+)\)/;
+  var software = softwareData.match(regex)[1]; // results captured in parentheses
   
-  res.send({ipaddress: ipaddress, language: language, software: null});
+  res.send({ipaddress: ipaddress, language: language, software: software});
 });
 
 // listen to port
