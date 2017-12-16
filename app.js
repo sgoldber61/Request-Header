@@ -18,6 +18,13 @@ app.get('/', function(req, res) {
 app.get('/whoami', function(req, res) {
   var ipaddress = req.connection.remoteAddress;
   
+  var iparray = [req.headers['x-forwarded-for'],
+     req.connection.remoteAddress,
+     req.socket.remoteAddress,
+     (req.connection.socket ? req.connection.socket.remoteAddress : null)];
+  
+  iparray.map(console.log);
+  
   res.send({ipaddress: ipaddress, language: null, software: null});
 });
 
