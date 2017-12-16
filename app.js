@@ -23,9 +23,7 @@ app.get('/whoami', function(req, res) {
      req.socket.remoteAddress,
      (req.connection.socket ? req.connection.socket.remoteAddress : null)];
   
-  iparray.map(console.log);
-  
-  res.send({ipaddress: ipaddress, language: null, software: null});
+  res.send({ipaddress: ipaddress, iparray: iparray, language: null, software: null});
 });
 
 // listen to port
